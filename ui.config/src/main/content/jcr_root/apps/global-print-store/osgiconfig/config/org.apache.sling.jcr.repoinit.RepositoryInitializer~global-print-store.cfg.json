@@ -1,0 +1,7 @@
+{
+    "scripts": [
+        "create path (sling:OrderedFolder) /content/dam/global-print-store",
+        "create path (nt:unstructured) /content/dam/global-print-store/jcr:content",
+        "set properties on /content/dam/global-print-store/jcr:content\n  set cq:conf{String} to /conf/global-print-store\n  set jcr:title{String} to \"Global Print Store\"\nend"
+    ]
+}
