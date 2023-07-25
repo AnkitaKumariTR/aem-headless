@@ -1,0 +1,23 @@
+# Retrives a list of all Adventures
+  {
+    adventureList {
+      items {
+        _path
+        slug
+        title
+        activity
+        price
+        tripLength
+        primaryImage {
+          ... on ImageRef {
+            _path
+            _authorUrl
+            _publishUrl
+            mimeType
+            width
+            height
+          }
+        }
+      }
+    }
+  }

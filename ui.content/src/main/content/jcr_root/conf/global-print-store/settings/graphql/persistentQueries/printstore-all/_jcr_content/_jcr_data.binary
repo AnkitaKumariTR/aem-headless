@@ -1,0 +1,24 @@
+# Retrives a list of all printStore
+  {
+    printstoreList {
+      items {
+       title
+        slug
+        description {
+          json
+          plaintext
+        }
+        price
+        primaryImage {
+          ... on ImageRef {
+            _path
+            _authorUrl
+            _publishUrl
+            mimeType
+            width
+            height
+          }
+        }
+      }
+    }
+  }
