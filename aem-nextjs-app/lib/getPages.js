@@ -24,10 +24,15 @@ async function getPages(rootPath) {
   const pages = getRootPageModel[':children'];
 
   const filteredPages = [];
- 
+  for (const page in pages) {
+    const match = page.match(/^\/content\/global-print-store\/us\/en\/(\w+)$/i);
+    if (match) {
+      filteredPages.push({ href: `/${match[1]}`, name: pages[page]['title'] });
+    }
+  }
 
   // add custom pages
-  filteredPages.push({ name: 'printstore', href: '/printstore' });
+  filteredPages.push({ name: 'Adventures', href: '/adventures' });
   
   return filteredPages;
 }
