@@ -80,18 +80,7 @@ export default function Layout({ children, pages }) {
                     <div className="flex space-x-4">
                       {pages.map((item) => (
                         <Link key={item.name} href={item.href}>
-                          <a
-                            aria-current={
-                              isCurrentPage(item.href) ? 'page' : undefined
-                            }
-                            className={classNames(
-                              isCurrentPage(item.href)
-                                ? 'bg-yellow-300 text-gray-700'
-                                : 'text-gray-800 hover:bg-yellow-200 hover:text-gray-700',
-                              'px-3 py-2 rounded-md text-sm font-medium'
-                            )}>
-                            {item.name}
-                          </a>
+                        <span>{item.name}</span>
                         </Link>
                       ))}
                     </div>

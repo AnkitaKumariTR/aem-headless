@@ -27,7 +27,7 @@ export default function Home({ model, pagePath, pages }) {
       <Head>
         <title>{model.title}</title>
       </Head>
-      <section>
+         <section>
         <div className="px-2 py-4 mx-auto max-w-7xl sm:px-6 lg:px-8 sm:py-2 lg:py-6">
           <ResponsiveGrid
             key={pagePath}
@@ -37,6 +37,7 @@ export default function Home({ model, pagePath, pages }) {
           />
         </div>
       </section>
+
     </Layout>
   );
 }
