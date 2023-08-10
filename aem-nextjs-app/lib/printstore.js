@@ -51,9 +51,19 @@ export class PrintStoreClient {
   }
 
   async getAdventuresBySlug(slug) {
-    const queryVariables = {'slug': slug};
+    const queryVariables = { 'slug': slug };
     const queryAdventuresBySlug = 'global-print-store/adventure-by-slug';
     const res = await this.aemHeadlessClient.runPersistedQuery(queryAdventuresBySlug, queryVariables);
     return res;
+  }
+
+  async getProductsResponse() {
+    const getProductsQuery = 'global-print-store/get-products';
+    return await this.aemHeadlessClient.runPersistedQuery(getProductsQuery);
+  }
+
+  async getProductsData() {
+    const response = await this.getProductsResponse();
+    return response?.data?.printstoreList?.items ?? []
   }
 }
